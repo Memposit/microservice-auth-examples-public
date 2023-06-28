@@ -1,0 +1,17 @@
+#Common
+target/
+!**/src/main/**
+!**/src/test/**
+application-local.yaml
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.cache
+.history
+.vscode/
+sdxcode

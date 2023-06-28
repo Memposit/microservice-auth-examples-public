@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  error:
+    include-message: always # only for dev systems
+
+security:
+  auth:
+    tokenSecret: secret
+    tokenExpirationMsec: 86400000
+
+spring:
+  application:
+    name: api-gateway
+
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
+  routes:
+    car-service:
+      path: /car
+      serviceId: car-service
+    login:
+      path: /login
+      serviceId: auth-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+hystrix:
+  shareSecurityContext: true
